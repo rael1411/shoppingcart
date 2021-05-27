@@ -5,7 +5,7 @@ function Item(props) {
   const handleClick = (e) => {
     e.preventDefault();
     let newObj = {...props.item}
-    props.handleAdd(newObj, count)
+    props.handleAdd(newObj, count, newObj.id)
     setCount(1);
   };
   return (
@@ -18,6 +18,7 @@ function Item(props) {
         <button
           className="arrow-button"
           onClick={() => count > 0 && setCount(count - 1)}
+          data-id={props.item.id}
         >
           &lt;
         </button>{" "}

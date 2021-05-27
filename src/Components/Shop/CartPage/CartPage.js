@@ -5,7 +5,7 @@ import "./CartPage.css"
 function CartPage(props) {
   const cartItems = props.cart.map((item) => (
     <li key={item.id}>
-      <CartItem item={item} />
+      <CartItem item={item} handleRemove={props.handleRemove}/>
     </li>
   ));
   let cartTotal = props.cart.reduce((prev, cur) => prev + cur.totalPrice, 0);

@@ -1,14 +1,17 @@
 import React from "react";
 import "./CartItem.css";
 function CartItem(props) {
+    const handleClick = (e) => {
+        e.preventDefault();
+        props.handleRemove(props.item, e.target.dataset.id)
+    }
   return (
     <div>
-      <ul>
-        <li>{props.item.name}</li>
-        <li>{props.item.price}</li>
-        <li>{props.item.totalPrice}</li>
-        <li>{props.item.amount}</li>
-      </ul>
+      <p>{props.item.name}</p>
+      <p>{props.item.price}</p>
+      <p>{props.item.totalPrice}</p>
+      <p>{props.item.amount}</p>
+      <button onClick={handleClick} data-id={props.item.id}>Remove</button>
     </div>
   );
 }

@@ -1,0 +1,12 @@
+.cart-items-wrap{
+    margin-top: 80px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cart-items-wrap li{
+    flex: 1 0 21%;
+    margin: 30px;
+    height: 200px;
+    position: relative;
+}
