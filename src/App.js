@@ -17,12 +17,13 @@ function App() {
       tempArray.push(newItem);
     } else {
       tempArray[index].amount += n;
-      newItem.totalPrice = newItem.price * n;
+      tempArray[index].totalPrice =
+        tempArray[index].price * tempArray[index].amount;
     }
     setCart(tempArray);
   };
   //function that removes items from cart
-  const handleRemove = (item, id) => {
+  const handleRemove = (id) => {
     let tempArray = cart.map((item) => {
       return { ...item };
     });
@@ -30,9 +31,29 @@ function App() {
     tempArray.splice(index, 1);
     setCart(tempArray);
   };
+  //function that modifies cart
+  const modifyCart = (id, n) => {
+
+    if (n > 0 || n === "") {
+      let tempArray = cart.map((item) => {
+        return { ...item };
+      });
+      let index = tempArray.findIndex((x) => x.id === id);
+      console.log(tempArray[index]);
+      tempArray[index].amount = n;
+      tempArray[index].totalPrice =
+        tempArray[index].amount * tempArray[index].price;
+      setCart(tempArray);
+    }
+  };
   return (
     <div>
-      <Routes cart={cart} handleAdd={handleAdd} handleRemove={handleRemove} />
+      <Routes
+        cart={cart}
+        handleAdd={handleAdd}
+        handleRemove={handleRemove}
+        modifyCart={modifyCart}
+      />
     </div>
   );
 }

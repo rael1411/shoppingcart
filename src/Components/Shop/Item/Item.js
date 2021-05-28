@@ -4,13 +4,15 @@ function Item(props) {
   const [count, setCount] = useState(1);
   const handleClick = (e) => {
     e.preventDefault();
-    let newObj = {...props.item}
-    props.handleAdd(newObj, count, newObj.id)
+    let newObj = { ...props.item };
+    props.handleAdd(newObj, count, newObj.id);
     setCount(1);
   };
   return (
     <div>
-      {props.item.url}
+      <div className="img-container">
+        <img src={props.item.url} alt="shoe"></img>
+      </div>
       <p>{props.item.name}</p>
       <fieldset>
         €{props.item.price}

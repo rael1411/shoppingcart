@@ -7,6 +7,6 @@
 .shop-items-wrap li{
     flex: 1 0 21%;
     margin: 30px;
-    height: 200px;
+    height: 300px;
     position: relative;
 }

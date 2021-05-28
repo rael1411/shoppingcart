@@ -5,7 +5,7 @@ import "./CartPage.css"
 function CartPage(props) {
   const cartItems = props.cart.map((item) => (
     <li key={item.id}>
-      <CartItem item={item} handleRemove={props.handleRemove}/>
+      <CartItem item={item} handleRemove={props.handleRemove} modifyCart={props.modifyCart}/>
     </li>
   ));
   let cartTotal = props.cart.reduce((prev, cur) => prev + cur.totalPrice, 0);
@@ -13,7 +13,8 @@ function CartPage(props) {
     <div>
       <Navbar />
       <ul className="cart-items-wrap">{cartItems}</ul>
-      Total: {cartTotal}
+      {cartTotal > 0 && <p>Total: {cartTotal}</p>}
+      {cartTotal === 0 && <p>Your cart is empty</p>}
     </div>
   );
 }

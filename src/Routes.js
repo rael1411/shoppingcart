@@ -19,7 +19,7 @@ function Routes(props){
           <Shop cart={props.cart} handleAdd={props.handleAdd} />
         </Route>
         <Route exact path="/cart">
-          <CartPage cart={props.cart} handleRemove={props.handleRemove} />
+          <CartPage cart={props.cart} handleRemove={props.handleRemove} modifyCart={props.modifyCart} />
         </Route>
       </Switch>
     </BrowserRouter></div>
