@@ -10,9 +10,9 @@ function CartItem(props) {
   };
   return (
     <div>
+        <img src={props.item.url} alt={props.item.name}></img>
       <p>{props.item.name}</p>
-      <p>{props.item.price}</p>
-      <p>{props.item.totalPrice}</p>
+      <p>tot: €{props.item.totalPrice}</p>
       
       <input
         type="number"

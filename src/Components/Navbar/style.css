@@ -17,11 +17,20 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    width: 12em;
 }
 .navbar li a:hover {
     background-color: #111;
 }
 
 .active{
-    color: red;
+    font-weight: bold;
+}
+.navbar-cart-size{
+    background-color: red;
+    
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 3px;
 }

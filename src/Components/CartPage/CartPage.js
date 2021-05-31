@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../Navbar/Navbar";
+import Navbar from "../Navbar/Navbar";
 import CartItem from "./CartItem/CartItem";
 import "./CartPage.css"
 function CartPage(props) {
@@ -11,9 +11,9 @@ function CartPage(props) {
   let cartTotal = props.cart.reduce((prev, cur) => prev + cur.totalPrice, 0);
   return (
     <div>
-      <Navbar />
+      <Navbar cartCounter={props.cartCounter}/>
       <ul className="cart-items-wrap">{cartItems}</ul>
-      {cartTotal > 0 && <p>Total: {cartTotal}</p>}
+      {cartTotal > 0 && <p>Total: €{cartTotal}</p>}
       {cartTotal === 0 && <p>Your cart is empty</p>}
     </div>
   );

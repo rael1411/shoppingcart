@@ -39,7 +39,7 @@ function Shop(props) {
 
   return (
     <div>
-      <Navbar cart={props.cart}/>
+      <Navbar cart={props.cart} cartCounter={props.cartCounter}/>
       <h1>Shop</h1>
       <ul className="shop-items-wrap">{listItems}</ul>
     </div>

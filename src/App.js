@@ -46,6 +46,14 @@ function App() {
       setCart(tempArray);
     }
   };
+  //counting items in cart to display them in the navbar
+  const cartCounter = ()  => {
+    let count = 0;
+    for (let i = 0; i < cart.length; i++) {
+      count += cart[i].amount;
+    }
+    return count;
+  }
   return (
     <div>
       <Routes
@@ -53,6 +61,7 @@ function App() {
         handleAdd={handleAdd}
         handleRemove={handleRemove}
         modifyCart={modifyCart}
+        cartCounter={cartCounter}
       />
     </div>
   );

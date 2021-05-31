@@ -4,8 +4,8 @@ import "./Homepage.css"
 function Homepage(props){
     return (
         <div>
-            <h1>Homepage</h1>
-            <Navbar cart={props.cart}/>
+            <h1>Shoes and stuff</h1>
+            <Navbar cart={props.cart} cartCounter={props.cartCounter}/>
         </div>
     )
 }
